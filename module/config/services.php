@@ -9,6 +9,7 @@
  *
  */
 
+use Netzmacht\Contao\FeatureToggle\FeatureToggle;
 use Netzmacht\Contao\FeatureToggle\Initializer;
 use Netzmacht\Contao\FeatureToggle\Subscriber\DefaultContextInitializer;
 use Netzmacht\Contao\FeatureToggle\Subscriber\ToggleCollectionInitializer;
@@ -21,11 +22,6 @@ use Qandidate\Toggle\ToggleManager;
 
 global $container;
 
-/**
- * Feature toggle initializer.
- *
- * @return Initializer
- */
 $container['feature-toggle.initializer'] = $container->share(
     function ($container) {
         return new Initializer($container['event-dispatcher']);
@@ -44,7 +40,7 @@ $container['feature-toggle.toggle-collection'] = $container->share(
     }
 );
 
-$container['feature-toggle.default-context-factory'] = function ($container) {
+$container['feature-toggle.default-context'] = function ($container) {
     if (!isset($container['feature-toggle.default-context'])) {
         /** @var Initializer $initializer */
         $initializer = $container['feature-toggle.initializer'];
@@ -57,7 +53,7 @@ $container['feature-toggle.default-context-factory'] = function ($container) {
     return clone $container['feature-toggle.default-context'];
 };
 
-$container['feature-toggle.manager'] = $container->share(
+$container['feature-toggle.toggle-manager'] = $container->share(
     function ($container) {
         $collection = $container['feature-toggle.toggle-collection'];
         $manager    = new ToggleManager($collection);
@@ -92,5 +88,11 @@ $container['feature-toggle.toggle-collection-initializer'] = $container->share(
 $container['feature-toggle.default-context-initializer'] = $container->share(
     function ($container) {
         return new DefaultContextInitializer($container['user']);
+    }
+);
+
+$container['feature-toggle'] = $container->share(
+    function ($container) {
+        return new FeatureToggle($container);
     }
 );
