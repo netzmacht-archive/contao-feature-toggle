@@ -29,11 +29,6 @@ class Options
      */
     public function getToggles()
     {
-        return array_map(
-            function ($feature) {
-                return $feature['name'];
-            },
-            $this->getFeatureToggle()->getToggleManager()->all()
-        );
+        return array_keys($this->getFeatureToggle()->getToggleManager()->all());
     }
 }
