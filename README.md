@@ -1,10 +1,10 @@
 Contao Feature toggle
 =====================
 
-[![Build Status](http://img.shields.io/travis/netzmacht/contao-flysystem/master.svg?style=flat-square)](https://travis-ci.org/netzmacht/contao-flysystem)
-[![Version](http://img.shields.io/packagist/v/netzmacht/contao-flysystem.svg?style=flat-square)](http://packagist.com/packages/netzmacht/contao-flysystem)
-[![License](http://img.shields.io/packagist/l/netzmacht/contao-flysystem.svg?style=flat-square)](http://packagist.com/packages/netzmacht/contao-flysystem)
-[![Downloads](http://img.shields.io/packagist/dt/netzmacht/contao-flysystem.svg?style=flat-square)](http://packagist.com/packages/netzmacht/contao-flysystem)
+[![Build Status](http://img.shields.io/travis/netzmacht/contao-feature-toggle/master.svg?style=flat-square)](https://travis-ci.org/netzmacht/contao-feature-toggle)
+[![Version](http://img.shields.io/packagist/v/netzmacht/contao-feature-toggle.svg?style=flat-square)](http://packagist.com/packages/netzmacht/contao-feature-toggle)
+[![License](http://img.shields.io/packagist/l/netzmacht/contao-feature-toggle.svg?style=flat-square)](http://packagist.com/packages/netzmacht/contao-feature-toggle)
+[![Downloads](http://img.shields.io/packagist/dt/netzmacht/contao-feature-toggle.svg?style=flat-square)](http://packagist.com/packages/netzmacht/contao-feature-toggle)
 [![Contao Community Alliance coding standard](http://img.shields.io/badge/cca-coding_standard-red.svg?style=flat-square)](https://github.com/contao-community-alliance/coding-standard)
 
 This extension provides feature toggling as an extension. 
