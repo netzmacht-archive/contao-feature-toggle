@@ -24,7 +24,7 @@
   },
   "require": {
     "php": "~5.5|~7.0",
-    "contao/core": ">=3.5,<3.6-dev",
+    "contao/core": ">=3.2,<3.6-dev",
     "contao-community-alliance/dependency-container": "~1.6",
     "contao-community-alliance/event-dispatcher": "~1",
     "contao-community-alliance/meta-palettes": "~1",
