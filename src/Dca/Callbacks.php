@@ -31,7 +31,7 @@ class Callbacks
      */
     private $legendMapping = [
         'tl_content' => 'invisible',
-        'tl_module'  => 'expert'
+        'tl_module' => 'expert'
     ];
 
     /**
@@ -50,6 +50,7 @@ class Callbacks
      * @param DataContainer $dataContainer Data container driver.
      *
      * @return void
+     * @SuppressWarnings(PHPMD.Superglobals)
      */
     public function addToggleFeatureField(DataContainer $dataContainer)
     {

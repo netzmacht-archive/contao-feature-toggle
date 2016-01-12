@@ -54,6 +54,7 @@ class VisibilitySubscriber
      * @param PageModel $pageModel Page model.
      *
      * @return void
+     * @SuppressWarnings(PHPMD.Superglobals)
      */
     public function handleGeneratePage(PageModel $pageModel)
     {
@@ -88,5 +89,4 @@ class VisibilitySubscriber
 
         return $context;
     }
-
 }
