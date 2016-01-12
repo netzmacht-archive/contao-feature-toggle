@@ -1,0 +1,52 @@
+{
+  "name": "netzmacht/contao-feature-toggle",
+  "description": "Feature toggle extension for Contao based on qandidate toggle",
+  "keywords": [
+    "contao",
+    "feature",
+    "toggle",
+    "qandidate"
+  ],
+  "type": "contao-module",
+  "license": "LGPL-3.0+",
+  "authors": [
+    {
+      "name": "David Molineus",
+      "email": "mail@netzmacht.de",
+      "homepage": "http://www.netzmacht.de",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "email": "mail@netzmacht.de",
+    "issues": "https://github.com/netzmacht/contao-feature-toggle/issues",
+    "source": "https://github.com/netzmacht/contao-feature-toggle"
+  },
+  "require": {
+    "php": "~5.5|~7.0",
+    "contao/core": ">=3.5,<3.6-dev",
+    "contao-community-alliance/dependency-container": "~1.6",
+    "contao-community-alliance/event-dispatcher": "~1",
+    "qandidate/toggle": "~0.4"
+  },
+  "require-dev": {
+    "netzmacht/contao-build-tools": "~1.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Netzmacht\\Contao\\FeatureToggle\\": "src/"
+    }
+  },
+  "prefer-stable": true,
+  "minimum-stability": "dev",
+  "extra": {
+    "contao": {
+      "sources": {
+        "module": "system/modules/feature-toggle"
+      }
+    },
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    }
+  }
+}
