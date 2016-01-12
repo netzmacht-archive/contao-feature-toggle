@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @package    dev
+ * @package    contao-feature-toggle
  * @author     David Molineus <david.molineus@netzmacht.de>
  * @copyright  2016 netzmacht creative David Molineus
  * @license    LGPL 3.0
@@ -41,7 +41,11 @@ class DefaultContextInitializer
     /**
      * Initialize the context.
      * 
-     * @param InitializeDefaultContextEvent $event
+     * @param InitializeDefaultContextEvent $event The subscribed event.
+     *
+     * @SuppressWarnings(PHPMD.Superglobals)
+     *
+     * @return void
      */
     public function handle(InitializeDefaultContextEvent $event)
     {
@@ -52,8 +56,8 @@ class DefaultContextInitializer
             $context->set('page_id', $GLOBALS['objPage']->id);
         }
         
-        $context->set('fe_user_logged_in', FE_USER_LOGGED_IN === TRUE);
-        $context->set('be_user_logged_in', BE_USER_LOGGED_IN === TRUE);
+        $context->set('fe_user_logged_in', FE_USER_LOGGED_IN === true);
+        $context->set('be_user_logged_in', BE_USER_LOGGED_IN === true);
         
         if ($this->user->id) {
             $context->set('user_id', $this->user->id);

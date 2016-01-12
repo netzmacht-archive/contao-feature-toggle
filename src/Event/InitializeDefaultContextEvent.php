@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @package    dev
+ * @package    contao-feature-toggle
  * @author     David Molineus <david.molineus@netzmacht.de>
  * @copyright  2016 netzmacht creative David Molineus
  * @license    LGPL 3.0
@@ -33,7 +33,7 @@ class InitializeDefaultContextEvent extends Event
     /**
      * InitializeContextEvent constructor.
      *
-     * @param Context $context
+     * @param Context $context Feature context.
      */
     public function __construct(Context $context)
     {
