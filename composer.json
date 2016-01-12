@@ -27,6 +27,7 @@
     "contao/core": ">=3.5,<3.6-dev",
     "contao-community-alliance/dependency-container": "~1.6",
     "contao-community-alliance/event-dispatcher": "~1",
+    "contao-community-alliance/meta-palettes": "~1",
     "qandidate/toggle": "~0.4"
   },
   "require-dev": {

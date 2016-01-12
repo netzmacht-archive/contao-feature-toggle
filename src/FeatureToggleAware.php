@@ -21,7 +21,7 @@ trait FeatureToggleAware
     /**
      * Get the feature toggle.
      *
-     * @return mixed
+     * @return FeatureToggle
      * @SuppressWarnings(PHPMD.Superglobals)
      */
     public function getFeatureToggle()

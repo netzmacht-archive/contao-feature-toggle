@@ -9,3 +9,12 @@
  *
  */
 
+$GLOBALS['TL_HOOKS']['isVisibleElement'][] = [
+    'Netzmacht\Contao\FeatureToggle\Subscriber\VisibilitySubscriber',
+    'handleIsVisibleElement'
+];
+
+$GLOBALS['TL_HOOKS']['generatePage'][] = [
+    'Netzmacht\Contao\FeatureToggle\Subscriber\VisibilitySubscriber',
+    'handleGeneratePage'
+];
