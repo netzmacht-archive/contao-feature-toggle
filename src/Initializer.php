@@ -62,6 +62,6 @@ class Initializer
     public function initializeDefaultContext(Context $context)
     {
         $event = new InitializeDefaultContextEvent($context);
-        $this->eventDispatcher->dispatch($event::NAME, $context);
+        $this->eventDispatcher->dispatch($event::NAME, $event);
     }
 }

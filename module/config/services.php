@@ -41,16 +41,16 @@ $container['feature-toggle.toggle-collection'] = $container->share(
 );
 
 $container['feature-toggle.default-context'] = function ($container) {
-    if (!isset($container['feature-toggle.default-context'])) {
+    if (!isset($container['feature-toggle.default-context.instance'])) {
         /** @var Initializer $initializer */
         $initializer = $container['feature-toggle.initializer'];
         $context     = new Context();
 
         $initializer->initializeDefaultContext($context);
-        $container['feature-toggle.default-context'] = $context;
+        $container['feature-toggle.default-context.instance'] = $context;
     }
 
-    return clone $container['feature-toggle.default-context'];
+    return clone $container['feature-toggle.default-context.instance'];
 };
 
 $container['feature-toggle.toggle-manager'] = $container->share(

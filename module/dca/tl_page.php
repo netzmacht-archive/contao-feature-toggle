@@ -9,15 +9,14 @@
  *
  */
 
-use Netzmacht\Contao\FeatureToggle\Dca\Options;
+use Netzmacht\Contao\FeatureToggle\Dca\Callbacks;
 
-Bit3\Contao\MetaPalettes\MetaPalettes::appendFields('tl_page', 'regular', 'expert', 'feature_toggle');
-Bit3\Contao\MetaPalettes\MetaPalettes::appendFields('tl_page', 'root', 'expert', 'feature_toggle');
+Bit3\Contao\MetaPalettes\MetaPalettes::appendFields('tl_page', 'regular', 'publish', ['feature_toggle']);
 
 $GLOBALS['TL_DCA']['tl_page']['fields']['feature_toggle'] = [
     'label'            => &$GLOBALS['TL_LANG']['tl_page']['feature_toggle'],
     'inputType'        => 'select',
-    'options_callback' => [Options::class, 'getToggles'],
+    'options_callback' => [Callbacks::class, 'getToggles'],
     'reference'        => &$GLOBALS['TL_LANG']['feature_toggles'],
     'eval'             => [
         'chosen'             => true,
