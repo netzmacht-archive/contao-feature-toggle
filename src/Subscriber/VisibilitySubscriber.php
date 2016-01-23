@@ -15,6 +15,7 @@ use Model;
 use Netzmacht\Contao\FeatureToggle\FeatureToggleAware;
 use PageModel;
 use Qandidate\Toggle\Context;
+use Template;
 
 /**
  * Class VisibilitySubscriber applies the toggle to Contao pages, articles, modules and content elements.
@@ -72,6 +73,40 @@ class VisibilitySubscriber
         $handler   = new $errorPage();
 
         $handler->generate($pageModel->id);
+    }
+
+    /**
+     * Filter deactivated navigation items when navigation template is being parsed.
+     *
+     * @param Template $template Template being parsed.
+     *
+     * @return void
+     */
+    public function filterNavigationItems(Template $template)
+    {
+        if (substr($template->getName(), 0, 4) !== 'nav_' || !is_array($template->items)) {
+            return;
+        }
+
+        $toggleManager = $this->getFeatureToggle()->getToggleManager();
+        $context       = $this->getFeatureToggle()
+            ->createDefaultContext()
+            ->set('type', 'module')
+            ->set('module_id', $template->id)
+            ->set('module_type', $template->type);
+
+        $template->items = array_filter(
+            $template->items,
+            function ($item) use ($toggleManager, $context) {
+                if (empty($item['feature_toggle'])) {
+                    return true;
+                }
+
+                $context->set('page_id', $item['id']);
+
+                return $toggleManager->active($item['feature_toggle'], $context);
+            }
+        );
     }
 
     /**

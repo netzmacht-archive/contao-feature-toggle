@@ -18,3 +18,8 @@ $GLOBALS['TL_HOOKS']['generatePage'][] = [
     'Netzmacht\Contao\FeatureToggle\Subscriber\VisibilitySubscriber',
     'handleGeneratePage'
 ];
+
+$GLOBALS['TL_HOOKS']['parseTemplate'][] = [
+    'Netzmacht\Contao\FeatureToggle\Subscriber\VisibilitySubscriber',
+    'filterNavigationItems'
+];
