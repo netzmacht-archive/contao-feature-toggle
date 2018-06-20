@@ -1,6 +1,7 @@
 Contao Feature toggle
 =====================
 
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 [![Build Status](http://img.shields.io/travis/netzmacht/contao-feature-toggle/master.svg?style=flat-square)](https://travis-ci.org/netzmacht/contao-feature-toggle)
 [![Version](http://img.shields.io/packagist/v/netzmacht/contao-feature-toggle.svg?style=flat-square)](http://packagist.com/packages/netzmacht/contao-feature-toggle)
 [![License](http://img.shields.io/packagist/l/netzmacht/contao-feature-toggle.svg?style=flat-square)](http://packagist.com/packages/netzmacht/contao-feature-toggle)
